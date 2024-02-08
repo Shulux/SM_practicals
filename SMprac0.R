@@ -136,5 +136,28 @@ colMeans(A)
 
 
 ## Plotting and data visualisation
+x <-  cement$x1
+y <-  cement$y
+
+plot(x, y) # 2D scatterplot of y vs x
+
+points(10, 100) # adds additional points to an existing plot
+
+i <-  1
+j <- 13
+segments(x[i], y[i], x[j], y[j]) # draws a straight line from (xi,yi) to (xj, yj)
+
+pairs(D) # gives a matrix plot (pairplot in seaborn) of all 2D combinations of variables in D
+
+library(lattice)
+z <-  cement$x2
+cloud(z ~ x + y) # gives a 3D scatterplot of z vs x and y.
+
+# persp(x, y, S) # gives a 3D surface plot where x and y are vectors of length n, S is an nxn matrix containing S(x,y)
+p <- 1:10
+q <- 1:10
+S <- matrix(1:100, 10, 10)
+persp(p, q, S)
 
 
+contour(p, q, S) # works the same as persp but gives a contour plot instead
